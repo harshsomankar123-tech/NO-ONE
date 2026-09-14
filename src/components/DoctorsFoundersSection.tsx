@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Smartphone, Bot, TrendingUp, Phone, Sparkles } from 'lucide-react';
+import { Globe, Smartphone, Bot, TrendingUp, Phone } from 'lucide-react';
 
 interface ServicesSectionProps {
   onOpenSchedule: () => void;
@@ -19,8 +19,7 @@ export const DoctorsFoundersSection: React.FC<ServicesSectionProps> = ({ onOpenS
           <div className="relative z-10">
             
             {/* Top Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#24262c] border border-zinc-700/50 text-xs font-sans tracking-wide text-zinc-300 mb-6 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#24262c] border border-zinc-700/50 text-xs font-sans tracking-wide text-zinc-300 mb-6 shadow-xs">
               <span>Full-Stack Engineering &amp; Strategic Digital Growth</span>
             </div>
 
