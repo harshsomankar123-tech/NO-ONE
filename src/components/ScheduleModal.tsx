@@ -84,48 +84,41 @@ export const ScheduleModal = ({
         </div>
 
         <h3 className="text-2xl sm:text-3xl font-serif text-zinc-950 mb-2 font-medium">
-          Tell us what you need built &amp; what's your problem — we will solve it with technology.
+          Tell us what you need built — we will solve it with technology.
         </h3>
-        <p className="text-xs sm:text-sm text-zinc-600 mb-6 leading-relaxed">
-          Fill in what you need to build, your name, contact number, and the problem you're facing. We will solve it with technology and provide a direct roadmap.
+        <p className="text-xs sm:text-sm text-zinc-500 mb-6 leading-relaxed font-normal">
+          Share your project requirements and contact details. We will review and provide a direct roadmap within 24 hours.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* 1. What to build */}
+          {/* Project Category Pills */}
           <div>
-            <label className="block text-xs font-mono uppercase text-zinc-700 font-semibold mb-2">
-              1. What do you need to build?
+            <label className="block text-xs sm:text-sm font-medium text-zinc-800 mb-2">
+              What are you building?
             </label>
-            <div className="flex flex-wrap gap-1.5 mb-2">
+            <div className="flex flex-wrap gap-2">
               {buildOptions.map((opt) => (
                 <button
                   type="button"
                   key={opt}
                   onClick={() => setWhatToBuild(opt)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-mono transition border ${
+                  className={`px-3.5 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer ${
                     whatToBuild === opt
-                      ? 'bg-zinc-950 text-white border-zinc-950 font-semibold shadow-xs'
-                      : 'bg-zinc-50 text-zinc-700 border-zinc-200 hover:bg-zinc-100 hover:text-zinc-950'
+                      ? 'bg-zinc-950 text-white shadow-sm'
+                      : 'bg-zinc-100/80 text-zinc-700 hover:bg-zinc-200/80'
                   }`}
                 >
                   {opt}
                 </button>
               ))}
             </div>
-            <input
-              type="text"
-              value={whatToBuild}
-              onChange={(e) => setWhatToBuild(e.target.value)}
-              placeholder="Or specify custom..."
-              className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none text-xs sm:text-sm text-zinc-900 transition"
-            />
           </div>
 
-          {/* 2 & 3. Name & Phone */}
+          {/* Name & Phone */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-mono uppercase text-zinc-700 font-semibold mb-1.5">
-                2. Your Name
+              <label className="block text-xs sm:text-sm font-medium text-zinc-800 mb-1.5">
+                Your Name
               </label>
               <input
                 type="text"
@@ -133,45 +126,48 @@ export const ScheduleModal = ({
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Harsh Somankar"
-                className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none text-xs sm:text-sm text-zinc-900 transition"
+                className="w-full bg-zinc-50/70 border border-zinc-200/90 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:bg-white focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900/10 transition"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-mono uppercase text-zinc-700 font-semibold mb-1.5">
-                3. Contact No. (Phone / WhatsApp)
+              <label className="block text-xs sm:text-sm font-medium text-zinc-800 mb-1.5">
+                Contact No. (Phone / WhatsApp)
               </label>
               <input
                 type="tel"
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="e.g. +91 98765 43210"
-                className="w-full px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-300 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none text-xs sm:text-sm text-zinc-900 transition"
+                placeholder="+91 98765 43210"
+                className="w-full bg-zinc-50/70 border border-zinc-200/90 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:bg-white focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900/10 transition"
               />
             </div>
           </div>
 
-          {/* 4. Problem */}
+          {/* Problem */}
           <div>
-            <label className="block text-xs font-mono uppercase text-zinc-700 font-semibold mb-1.5">
-              4. What's your problem? (We will solve with technology)
+            <label className="block text-xs sm:text-sm font-medium text-zinc-800 mb-1.5">
+              What's your problem or project goal?
             </label>
             <textarea
               rows={3}
               required
               value={problem}
               onChange={(e) => setProblem(e.target.value)}
-              placeholder="Describe the problem, roadblock, or timeline you're facing..."
-              className="w-full p-3 rounded-xl bg-zinc-50 border border-zinc-300 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 outline-none text-xs sm:text-sm text-zinc-900 transition resize-none"
+              placeholder="Briefly describe what you need built, your timeline, or the bottleneck you're solving..."
+              className="w-full bg-zinc-50/70 border border-zinc-200/90 rounded-xl p-3.5 text-xs sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:bg-white focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900/10 transition resize-none"
             />
           </div>
 
-          <div className="pt-2">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span className="text-xs text-zinc-400 font-sans">
+              Confidential • Direct response &lt; 24 hours
+            </span>
             <button
               type="submit"
               disabled={submitted}
-              className="w-full py-3.5 px-6 rounded-full bg-zinc-950 hover:bg-zinc-800 text-white font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-lg disabled:opacity-75 cursor-pointer"
+              className="w-full sm:w-auto py-3 px-6 rounded-full bg-zinc-950 hover:bg-zinc-800 text-white font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-lg disabled:opacity-75 cursor-pointer ml-auto"
             >
               {submitted ? (
                 <>

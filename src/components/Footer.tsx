@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { Send, Phone, User, Wrench, FileQuestion, Mail, MessageCircle, Loader2 } from 'lucide-react';
+import { Send, Phone, Mail, MessageCircle, Loader2 } from 'lucide-react';
 
 const LinkedinIcon = ({ className = "w-3.5 h-3.5" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor">
@@ -167,59 +167,49 @@ export const Footer = ({ onShowToast }: FooterProps) => {
             </div>
           </div>
 
-          {/* Right Column: "What You Need To Build • Name • No. • Problem" Form */}
+          {/* Right Column: Clean Project Intake Form */}
           <div className="lg:col-span-7">
             <div className="bg-white rounded-[2.5rem] border border-zinc-200 p-7 sm:p-10 shadow-2xl text-zinc-900 relative overflow-hidden">
               <h4 className="text-2xl sm:text-3xl font-serif text-zinc-950 mb-2 tracking-tight font-medium">
-                Tell us what you need built &amp; what's your problem — we will solve it with technology.
+                Tell us what you need built — we will solve it with technology.
               </h4>
 
-              <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-6 font-normal">
-                Fill in what you need to build, your name, contact number, and the problem you're facing. We will solve it with technology and provide a direct roadmap.
+              <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed mb-6 font-normal">
+                Share your project requirements and contact details. We will review and provide a direct roadmap within 24 hours.
               </p>
 
-              {/* The Form */}
+              {/* The Clean Form */}
               <form onSubmit={handleSolveProblem} className="space-y-4">
                 
-                {/* 1. What You Need To Build */}
+                {/* Project Category Pills */}
                 <div>
-                  <label className="block text-xs font-mono uppercase text-zinc-700 mb-2 flex items-center gap-1.5 font-semibold">
-                    <Wrench className="w-3.5 h-3.5 text-emerald-700" />
-                    <span>1. What do you need to build?</span>
+                  <label className="block text-xs sm:text-sm font-medium text-zinc-800 mb-2">
+                    What are you building?
                   </label>
 
-                  <div className="flex flex-wrap gap-1.5 mb-2.5">
+                  <div className="flex flex-wrap gap-2">
                     {buildOptions.map((opt) => (
                       <button
                         type="button"
                         key={opt}
                         onClick={() => setWhatToBuild(opt)}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-mono transition border ${
+                        className={`px-3.5 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer ${
                           whatToBuild === opt
-                            ? 'bg-zinc-950 text-white border-zinc-950 font-semibold shadow-xs'
-                            : 'bg-zinc-50 text-zinc-700 border-zinc-200 hover:bg-zinc-100 hover:text-zinc-950'
+                            ? 'bg-zinc-950 text-white shadow-sm'
+                            : 'bg-zinc-100/80 text-zinc-700 hover:bg-zinc-200/80'
                         }`}
                       >
                         {opt}
                       </button>
                     ))}
                   </div>
-
-                  <input
-                    type="text"
-                    value={whatToBuild}
-                    onChange={(e) => setWhatToBuild(e.target.value)}
-                    placeholder="Or specify custom: e.g. Full custom web app + AI agent..."
-                    className="w-full bg-zinc-50 border border-zinc-300 rounded-xl px-4 py-3 text-xs sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition shadow-2xs"
-                  />
                 </div>
 
-                {/* 2 & 3: Name & Contact Number (No.) */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {/* Name & Contact */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono uppercase text-zinc-700 mb-1.5 flex items-center gap-1.5 font-semibold">
-                      <User className="w-3.5 h-3.5 text-emerald-700" />
-                      <span>2. Your Name</span>
+                    <label className="block text-xs sm:text-sm font-medium text-zinc-800 mb-1.5">
+                      Your Name
                     </label>
                     <input
                       type="text"
@@ -227,52 +217,50 @@ export const Footer = ({ onShowToast }: FooterProps) => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Harsh Somankar"
-                      className="w-full bg-zinc-50 border border-zinc-300 rounded-xl px-4 py-3 text-xs sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition shadow-2xs"
+                      className="w-full bg-zinc-50/70 border border-zinc-200/90 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:bg-white focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900/10 transition"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase text-zinc-700 mb-1.5 flex items-center gap-1.5 font-semibold">
-                      <Phone className="w-3.5 h-3.5 text-emerald-700" />
-                      <span>3. Contact No. (Phone / WhatsApp)</span>
+                    <label className="block text-xs sm:text-sm font-medium text-zinc-800 mb-1.5">
+                      Contact No. (Phone / WhatsApp)
                     </label>
                     <input
                       type="tel"
                       required
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="e.g. +91 98765 43210 or +1 (555)..."
-                      className="w-full bg-zinc-50 border border-zinc-300 rounded-xl px-4 py-3 text-xs sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition shadow-2xs"
+                      placeholder="+91 98765 43210"
+                      className="w-full bg-zinc-50/70 border border-zinc-200/90 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:bg-white focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900/10 transition"
                     />
                   </div>
                 </div>
 
-                {/* 4. Problem Description */}
+                {/* Problem Description */}
                 <div>
-                  <label className="block text-xs font-mono uppercase text-zinc-700 mb-1.5 flex items-center gap-1.5 font-semibold">
-                    <FileQuestion className="w-3.5 h-3.5 text-emerald-700" />
-                    <span>4. What's your problem? (We will solve with technology)</span>
+                  <label className="block text-xs sm:text-sm font-medium text-zinc-800 mb-1.5">
+                    What's your problem or project goal?
                   </label>
                   <textarea
                     rows={3}
                     required
                     value={problem}
                     onChange={(e) => setProblem(e.target.value)}
-                    placeholder="Describe the problem, roadblock, or timeline you're facing (e.g. Need to build and launch an AI agent, Android/iOS app like Kiwix, or a compliant pharma portal like NSB Pharmaceutical with fast turnaround...)"
-                    className="w-full bg-zinc-50 border border-zinc-300 rounded-xl p-3.5 text-xs sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition resize-none shadow-2xs"
+                    placeholder="Briefly describe what you need built, your timeline, or the bottleneck you're solving..."
+                    className="w-full bg-zinc-50/70 border border-zinc-200/90 rounded-xl p-3.5 text-xs sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:bg-white focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900/10 transition resize-none"
                   />
                 </div>
 
                 {/* Submit button */}
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
-                  <span className="text-[11px] font-mono text-zinc-500">
+                  <span className="text-xs text-zinc-400 font-sans">
                     Confidential • Direct response &lt; 24 hours
                   </span>
 
                   <button
                     type="submit"
                     disabled={submitted}
-                    className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#1c1e22] hover:bg-[#282a32] text-white font-semibold text-xs sm:text-sm tracking-tight transition flex items-center justify-center gap-2 shadow-md hover:shadow-lg disabled:opacity-70 cursor-pointer"
+                    className="w-full sm:w-auto px-7 py-3 rounded-xl bg-[#1c1e22] hover:bg-[#282a32] text-white font-medium text-xs sm:text-sm tracking-tight transition flex items-center justify-center gap-2 shadow-md hover:shadow-lg disabled:opacity-70 cursor-pointer"
                   >
                     {submitted ? (
                       <>
