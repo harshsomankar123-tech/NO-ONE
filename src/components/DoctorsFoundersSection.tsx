@@ -68,19 +68,19 @@ export const DoctorsFoundersSection: React.FC<ServicesSectionProps> = ({ onOpenS
                 </div>
               </div>
 
-              {/* Service 3: Autonomous AI Agents */}
+              {/* Service 3: AI Agents for All Problems */}
               <div className="bg-[#24262c]/90 rounded-3xl p-6 sm:p-7 border border-zinc-700/50 flex flex-col justify-between shadow-md hover:border-zinc-600/70 transition-all">
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-[#1c1e22] border border-zinc-700/60 flex items-center justify-center text-cyan-400 mb-5 shadow-xs">
                     <Bot className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-serif text-white mb-2">AI Agents &amp; RAG</h3>
+                  <h3 className="text-xl font-serif text-white mb-2">AI Agents for All Problems</h3>
                   <p className="text-xs text-zinc-300 font-light leading-relaxed mb-4">
-                    24/7 smart customer support copilots, workflow automation, multi-turn RAG, and deterministic offline safety fallback.
+                    Intelligent 24/7 conversational chatbots, customer support copilots, workflow automation, and custom domain agents that solve operational bottlenecks with zero hallucinations.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-zinc-700/40 text-[11px] font-mono text-zinc-400">
-                  <span>Zero-Hallucination Guardrails</span>
+                  <span>Chatbots &amp; Workflow Automation</span>
                 </div>
               </div>
 
