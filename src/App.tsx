@@ -14,6 +14,7 @@ import { Toast } from './components/Toast';
 import { WebDevPage } from './pages/WebDevPage';
 import { AppDevPage } from './pages/AppDevPage';
 import { AgentsPage } from './pages/AgentsPage';
+import { DoctorsFoundersSection } from './components/DoctorsFoundersSection';
 
 export function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'web' | 'apps' | 'agents'>('home');
@@ -145,6 +146,11 @@ export function App() {
           <DisciplinesSection
             onNavigateWeb={() => navigateTo('web')}
             onNavigateApps={() => navigateTo('apps')}
+          />
+
+          {/* Dedicated Section: For Doctors & Founders */}
+          <DoctorsFoundersSection
+            onOpenSchedule={() => setIsScheduleOpen(true)}
           />
 
           {/* Curated Works & Systems (featuring NSB Pharmaceutical at top) */}
