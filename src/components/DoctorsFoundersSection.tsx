@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Smartphone, Bot, TrendingUp, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
 interface ServicesSectionProps {
   onOpenSchedule: () => void;
@@ -38,8 +38,17 @@ export const DoctorsFoundersSection: React.FC<ServicesSectionProps> = ({ onOpenS
               {/* Service 1: Web & SaaS Platforms */}
               <div className="bg-[#24262c]/90 rounded-3xl p-6 sm:p-7 border border-zinc-700/50 flex flex-col justify-between shadow-md hover:border-zinc-600/70 transition-all">
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#1c1e22] border border-zinc-700/60 flex items-center justify-center text-emerald-400 mb-5 shadow-xs">
-                    <Globe className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-2xl bg-[#1c1e22] border border-zinc-700/60 flex items-center justify-center mb-5 shadow-xs">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="3" width="20" height="18" rx="3" stroke="#34d399" strokeWidth="1.5" />
+                      <path d="M2 8h20" stroke="#34d399" strokeWidth="1.5" />
+                      <circle cx="5" cy="5.5" r="0.8" fill="#34d399" />
+                      <circle cx="7.5" cy="5.5" r="0.8" fill="#34d399" />
+                      <circle cx="10" cy="5.5" r="0.8" fill="#34d399" />
+                      <path d="M8 13l-2.5 2.5L8 18" stroke="#34d399" strokeWidth="1.5" />
+                      <path d="M16 13l2.5 2.5L16 18" stroke="#34d399" strokeWidth="1.5" />
+                      <path d="M13 11.5l-2 9" stroke="#34d399" strokeWidth="1.2" opacity="0.5" />
+                    </svg>
                   </div>
                   <h3 className="text-xl font-serif text-white mb-2">Web &amp; SaaS Platforms</h3>
                   <p className="text-xs text-zinc-300 font-light leading-relaxed mb-4">
@@ -54,8 +63,16 @@ export const DoctorsFoundersSection: React.FC<ServicesSectionProps> = ({ onOpenS
               {/* Service 2: Mobile App Development */}
               <div className="bg-[#24262c]/90 rounded-3xl p-6 sm:p-7 border border-zinc-700/50 flex flex-col justify-between shadow-md hover:border-zinc-600/70 transition-all">
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#1c1e22] border border-zinc-700/60 flex items-center justify-center text-amber-400 mb-5 shadow-xs">
-                    <Smartphone className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-2xl bg-[#1c1e22] border border-zinc-700/60 flex items-center justify-center mb-5 shadow-xs">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="5" y="2" width="14" height="20" rx="3" stroke="#fbbf24" strokeWidth="1.5" />
+                      <path d="M10 4.5h4" stroke="#fbbf24" strokeWidth="1.2" />
+                      <rect x="7.5" y="7" width="3.5" height="3.5" rx="0.8" stroke="#fbbf24" strokeWidth="1" />
+                      <rect x="13" y="7" width="3.5" height="3.5" rx="0.8" stroke="#fbbf24" strokeWidth="1" />
+                      <rect x="7.5" y="12.5" width="3.5" height="3.5" rx="0.8" stroke="#fbbf24" strokeWidth="1" />
+                      <rect x="13" y="12.5" width="3.5" height="3.5" rx="0.8" stroke="#fbbf24" strokeWidth="1" />
+                      <path d="M10.5 19h3" stroke="#fbbf24" strokeWidth="1.2" />
+                    </svg>
                   </div>
                   <h3 className="text-xl font-serif text-white mb-2">Mobile Applications</h3>
                   <p className="text-xs text-zinc-300 font-light leading-relaxed mb-4">
@@ -70,8 +87,16 @@ export const DoctorsFoundersSection: React.FC<ServicesSectionProps> = ({ onOpenS
               {/* Service 3: AI Agents for All Problems */}
               <div className="bg-[#24262c]/90 rounded-3xl p-6 sm:p-7 border border-zinc-700/50 flex flex-col justify-between shadow-md hover:border-zinc-600/70 transition-all">
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#1c1e22] border border-zinc-700/60 flex items-center justify-center text-cyan-400 mb-5 shadow-xs">
-                    <Bot className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-2xl bg-[#1c1e22] border border-zinc-700/60 flex items-center justify-center mb-5 shadow-xs">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 3C7.5 3 4 6.5 4 10c0 2.2 1.1 4.1 2.8 5.3.3.2.5.6.5 1v1.2c0 .8.7 1.5 1.5 1.5h6.4c.8 0 1.5-.7 1.5-1.5v-1.2c0-.4.2-.8.5-1C18.9 14.1 20 12.2 20 10c0-3.5-3.5-7-8-7z" stroke="#22d3ee" strokeWidth="1.5" />
+                      <path d="M9.5 21h5" stroke="#22d3ee" strokeWidth="1.5" />
+                      <circle cx="9" cy="9" r="1" fill="#22d3ee" />
+                      <circle cx="15" cy="9" r="1" fill="#22d3ee" />
+                      <circle cx="12" cy="12" r="1" fill="#22d3ee" />
+                      <path d="M9 9l3 3" stroke="#22d3ee" strokeWidth="0.8" opacity="0.6" />
+                      <path d="M15 9l-3 3" stroke="#22d3ee" strokeWidth="0.8" opacity="0.6" />
+                    </svg>
                   </div>
                   <h3 className="text-xl font-serif text-white mb-2">AI Agents for All Problems</h3>
                   <p className="text-xs text-zinc-300 font-light leading-relaxed mb-4">
@@ -86,8 +111,15 @@ export const DoctorsFoundersSection: React.FC<ServicesSectionProps> = ({ onOpenS
               {/* Service 4: Custom Portals & SEO */}
               <div className="bg-[#24262c]/90 rounded-3xl p-6 sm:p-7 border border-zinc-700/50 flex flex-col justify-between shadow-md hover:border-zinc-600/70 transition-all">
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#1c1e22] border border-zinc-700/60 flex items-center justify-center text-purple-400 mb-5 shadow-xs">
-                    <TrendingUp className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-2xl bg-[#1c1e22] border border-zinc-700/60 flex items-center justify-center mb-5 shadow-xs">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="3" width="20" height="16" rx="2.5" stroke="#a78bfa" strokeWidth="1.5" />
+                      <path d="M2 7h20" stroke="#a78bfa" strokeWidth="1.2" />
+                      <rect x="4.5" y="9.5" width="6" height="3" rx="0.8" stroke="#a78bfa" strokeWidth="1" opacity="0.5" />
+                      <rect x="4.5" y="14" width="4" height="2" rx="0.8" stroke="#a78bfa" strokeWidth="1" opacity="0.5" />
+                      <circle cx="16" cy="14" r="2.5" stroke="#a78bfa" strokeWidth="1.3" />
+                      <path d="M18 16l2.5 2.5" stroke="#a78bfa" strokeWidth="1.5" />
+                    </svg>
                   </div>
                   <h3 className="text-xl font-serif text-white mb-2">Custom Portals &amp; SEO</h3>
                   <p className="text-xs text-zinc-300 font-light leading-relaxed mb-4">
