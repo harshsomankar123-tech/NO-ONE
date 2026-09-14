@@ -288,23 +288,6 @@ export const Footer = ({ onShowToast }: FooterProps) => {
                   </button>
                 </div>
 
-                {/* Free Instant Email Notification & WhatsApp indicator */}
-                <div className="mt-4 pt-3 border-t border-zinc-100 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-zinc-600">
-                  <span className="flex items-center gap-1.5 text-emerald-800 font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    Instant notification sent to harshsomankar123@gmail.com
-                  </span>
-                  <a
-                    href={`https://wa.me/916263565140?text=${encodeURIComponent("Hi Harsh, I submitted a project request on Harsh Studio.")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-900 font-medium transition"
-                  >
-                    <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>WhatsApp: +91 6263565140</span>
-                  </a>
-                </div>
-
               </form>
             </div>
           </div>
