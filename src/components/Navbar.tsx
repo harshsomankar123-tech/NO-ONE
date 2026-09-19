@@ -1,4 +1,5 @@
-import { Headphones } from 'lucide-react';
+import { useState } from 'react';
+import { Headphones, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   onOpenSchedule?: () => void;
@@ -12,6 +13,7 @@ export const Navbar = ({
   currentPage,
   onNavigatePage
 }: NavbarProps) => {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const scrollTo = (id: string) => {
     if (currentPage !== 'home') {
       onNavigatePage('home');
@@ -146,20 +148,82 @@ export const Navbar = ({
         </nav>
 
         {/* Right CTA Button: Headphone Available link directly opening email */}
-        <a
-          href="mailto:harshsomankar123@gmail.com?subject=What%20you%20need%20to%20build%20-%20Let's%20discuss&body=Hi%20Harsh,%0D%0A%0D%0AI'd%20like%20to%20discuss%20what%20I%20need%20built."
-          className="group relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white hover:bg-zinc-950 border border-zinc-200/90 hover:border-zinc-900 text-zinc-800 hover:text-white text-xs font-medium shadow-2xs hover:shadow-sm transition-all duration-200 cursor-pointer"
-          title="What you need to build? Let's discuss"
-        >
-          <div className="relative flex items-center justify-center">
-            <Headphones className="w-3.5 h-3.5 text-zinc-700 group-hover:text-emerald-400 transition-colors" />
-            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse ring-1 ring-white group-hover:ring-zinc-950" />
-          </div>
-          <span className="tracking-tight font-sans transition-colors">
-            Available
-          </span>
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="mailto:harshsomankar123@gmail.com?subject=What%20you%20need%20to%20build%20-%20Let's%20discuss&body=Hi%20Harsh,%0D%0A%0D%0AI'd%20like%20to%20discuss%20what%20I%20need%20built."
+            className="group relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white hover:bg-zinc-950 border border-zinc-200/90 hover:border-zinc-900 text-zinc-800 hover:text-white text-xs font-medium shadow-2xs hover:shadow-sm transition-all duration-200 cursor-pointer"
+            title="What you need to build? Let's discuss"
+          >
+            <div className="relative flex items-center justify-center">
+              <Headphones className="w-3.5 h-3.5 text-zinc-700 group-hover:text-emerald-400 transition-colors" />
+              <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse ring-1 ring-white group-hover:ring-zinc-950" />
+            </div>
+            <span className="tracking-tight font-sans transition-colors">
+              Available
+            </span>
+          </a>
+
+          {/* Mobile Hamburger */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden w-9 h-9 rounded-full bg-white border border-zinc-200/90 flex items-center justify-center text-zinc-700 hover:bg-zinc-100 transition shadow-2xs"
+          >
+            {mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Nav Dropdown */}
+      {mobileOpen && (
+        <div className="md:hidden mt-2 mx-4 bg-white/95 backdrop-blur-xl border border-zinc-200/80 rounded-2xl p-3 shadow-lg animate-fade-in">
+          <div className="flex flex-col gap-1">
+            {([
+              { key: 'home' as const, label: 'Home' },
+              { key: 'web' as const, label: 'Web Dev' },
+              { key: 'apps' as const, label: 'App Dev' },
+              { key: 'agents' as const, label: 'AI Agents' },
+            ]).map(({ key, label }) => (
+              <button
+                key={key}
+                onClick={() => { onNavigatePage(key); setMobileOpen(false); }}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                  currentPage === key
+                    ? 'bg-zinc-100 text-zinc-950 font-semibold'
+                    : 'text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900'
+                }`}
+              >
+                {currentPage === key && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                )}
+                {label}
+              </button>
+            ))}
+
+            <span className="w-full h-px bg-zinc-100 my-1" />
+
+            {([
+              { id: 'impact', label: 'Scale' },
+              { id: 'philosophy', label: 'Showcase' },
+              { id: 'about', label: 'Contact' },
+            ]).map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => { scrollTo(id); setMobileOpen(false); }}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                  currentPage === 'home' && activeSection === id
+                    ? 'bg-zinc-100 text-zinc-950 font-semibold'
+                    : 'text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900'
+                }`}
+              >
+                {currentPage === 'home' && activeSection === id && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                )}
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
 };
