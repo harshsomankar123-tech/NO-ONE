@@ -79,6 +79,26 @@ export function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [currentPage]);
 
+  // Auto-open ScheduleModal after user scrolls ~40% of the page (once per session)
+  useEffect(() => {
+    if (currentPage !== 'home') return;
+
+    const alreadyShown = sessionStorage.getItem('schedule_auto_shown');
+    if (alreadyShown) return;
+
+    const handleAutoPopup = () => {
+      const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      if (scrollPercent >= 0.4) {
+        setIsScheduleOpen(true);
+        sessionStorage.setItem('schedule_auto_shown', '1');
+        window.removeEventListener('scroll', handleAutoPopup);
+      }
+    };
+
+    window.addEventListener('scroll', handleAutoPopup, { passive: true });
+    return () => window.removeEventListener('scroll', handleAutoPopup);
+  }, [currentPage]);
+
   const handleStartProject = (email?: string) => {
     if (email) setInitialEmail(email);
     setIsScheduleOpen(true);
