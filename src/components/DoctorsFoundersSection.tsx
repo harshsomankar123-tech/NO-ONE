@@ -56,7 +56,7 @@ export const DoctorsFoundersSection: React.FC<ServicesSectionProps> = ({ onOpenS
                   </p>
                 </div>
                 <div className="pt-4 border-t border-zinc-700/40 text-[11px] font-mono text-zinc-400">
-                  <span>e.g., nsbpharamaceutical.com</span>
+                  <span>e.g., reditionpharma.com &amp; nsbpharamaceutical.com</span>
                 </div>
               </div>
 

@@ -8,6 +8,16 @@ interface WebDevPageProps {
 export const WebDevPage = ({ onBack, onOpenSchedule }: WebDevPageProps) => {
   const websites = [
     {
+      title: 'Redition Pharma Ltd.',
+      category: 'Healthcare & Institutional Formulations',
+      url: 'https://www.reditionpharma.com/',
+      status: 'Live in Production',
+      desc: 'WHO-GMP & Schedule M certified institutional pharmaceutical platform engineered with interactive dosage monographs, real-time COA validation, cold-chain logistics telemetry, and an automated RFQ Trade Desk.',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'WHO-GMP Schedule M', 'B2B Trade Desk', 'Cold-Chain'],
+      metrics: '8+ Core Formulations • WHO-GMP Certified • Pan-India Logistics',
+      image: '/redition-pharma.jpg'
+    },
+    {
       title: 'NSB Pharmaceutical',
       category: 'Healthcare & B2B Portal',
       url: 'https://nsbpharamaceutical.com/',
@@ -111,7 +121,56 @@ export const WebDevPage = ({ onBack, onOpenSchedule }: WebDevPageProps) => {
           </div>
         </div>
 
-        {/* Featured Live Site 1: NSB Pharmaceutical */}
+        {/* Featured Live Site 1: Redition Pharma Ltd. */}
+        <div className="bg-white rounded-[2.5rem] border border-teal-500/30 p-8 sm:p-12 shadow-sm mb-10 relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-zinc-100 border border-zinc-200 text-zinc-800 text-xs font-mono font-medium mb-4 shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse" />
+                Featured Live Deployment
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-serif text-zinc-950 mb-4 tracking-tight">
+                Redition Pharma Ltd. — WHO-GMP Formulations &amp; Institutional Trade Desk
+              </h2>
+              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed mb-6 font-normal">
+                Institutional hospital supply and direct healthcare distribution platform engineered under revised Schedule M &amp; WHO-GMP standards. Features comprehensive dosage monographs, real-time COA verification, cold-chain telemetry, and automated B2B quote management.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                <span className="px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-mono">React / TypeScript</span>
+                <span className="px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-mono">WHO-GMP &amp; Schedule M</span>
+                <span className="px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-mono">COA Validation</span>
+                <span className="px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-mono">Institutional Trade Desk</span>
+                <span className="px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-mono">Cold-Chain Supply</span>
+              </div>
+              <a
+                href="https://www.reditionpharma.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-teal-900 hover:bg-teal-800 text-white text-xs font-semibold tracking-tight transition shadow-md group"
+              >
+                <span>Launch reditionpharma.com</span>
+                <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
+
+            <div className="lg:col-span-5">
+              <a 
+                href="https://www.reditionpharma.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl overflow-hidden border border-zinc-300 shadow-md group/img hover:shadow-lg transition"
+              >
+                <img
+                  src="/redition-pharma.jpg"
+                  alt="Redition Pharma Ltd. live platform screenshot"
+                  className="w-full h-auto object-cover group-hover/img:scale-102 transition duration-500"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Featured Live Site 2: NSB Pharmaceutical */}
         <div className="bg-white rounded-[2.5rem] border border-emerald-500/30 p-8 sm:p-12 shadow-sm mb-10 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">

@@ -58,16 +58,26 @@ export const DisciplinesSection = ({ onNavigateWeb, onNavigateApps }: Discipline
 
               {/* Highlights Chips */}
               <div className="space-y-2 mb-8 text-xs font-mono text-zinc-600">
-                <div className="flex items-center gap-2 p-2 rounded-xl bg-zinc-50 border border-zinc-100">
+                <div className="flex flex-wrap items-center gap-2 p-2 rounded-xl bg-zinc-50 border border-zinc-100">
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
                   <span className="font-semibold text-zinc-800">Featured:</span>
+                  <a 
+                    href="https://www.reditionpharma.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-emerald-700 hover:underline flex items-center gap-1 font-medium"
+                  >
+                    Redition Pharma
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                  <span>•</span>
                   <a 
                     href="https://nsbpharamaceutical.com/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-emerald-700 hover:underline flex items-center gap-1"
                   >
-                    NSB Pharmaceutical (WHO-GMP Portal)
+                    NSB Pharma
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>

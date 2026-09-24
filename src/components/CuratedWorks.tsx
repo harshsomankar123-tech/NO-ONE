@@ -76,6 +76,142 @@ export const CuratedWorks = ({
           </div>
         </div>
 
+        {/* PRIMARY RECENT PROJECT 1: Redition Pharma Ltd. (Live Website) */}
+        {(filter === 'all' || filter === 'pharma') && (
+          <div className="bg-white rounded-[2.5rem] border border-teal-600/20 p-6 sm:p-9 lg:p-12 shadow-md hover:shadow-xl transition-all mb-10 group relative overflow-hidden">
+            {/* Ambient subtle corner glow */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-teal-50/70 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+              
+              {/* Left Column: Details & Value */}
+              <div className="lg:col-span-6 flex flex-col">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-zinc-100 border border-zinc-200/80 text-zinc-800 text-xs font-mono font-medium shadow-2xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse" />
+                    Featured Live Deployment
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-zinc-50 border border-zinc-200/60 text-zinc-600 text-xs font-mono font-medium">
+                    WHO-GMP &amp; Schedule M
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-zinc-50 border border-zinc-200/60 text-zinc-600 text-xs font-mono font-medium">
+                    Hospital Trade Desk
+                  </span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-zinc-950 mb-3 tracking-tight">
+                  Redition Pharma Ltd. — WHO-GMP Formulations &amp; Institutional Trade Desk
+                </h3>
+
+                <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal mb-8">
+                  An institutional hospital supply and pharmaceutical distribution platform engineered under WHO-GMP standards and revised Schedule M guidelines. Features interactive therapeutic monographs (ADNOSINE-108, MACSINE-109, PREDY-NT, QLONG-GOLD, ADNOCAR-DS Syrup), batch-wise Certificate of Analysis (COA) verification, cold-chain telemetry, and an automated RFQ Trade Desk.
+                </p>
+
+                {/* Metrics */}
+                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-zinc-100 mb-8">
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-serif text-zinc-950">
+                      8+
+                    </div>
+                    <div className="text-xs text-zinc-500 mt-1">
+                      Core Formulations
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-serif text-teal-800 font-medium">
+                      100%
+                    </div>
+                    <div className="text-xs text-zinc-500 mt-1">
+                      COA &amp; WHO-GMP Validated
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-serif text-zinc-950">
+                      Pan-India
+                    </div>
+                    <div className="text-xs text-zinc-500 mt-1">
+                      Cold-Chain Supply
+                    </div>
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex flex-wrap items-center gap-4">
+                  <a
+                    href="https://www.reditionpharma.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-semibold tracking-tight transition shadow-md hover:shadow-lg group/btn cursor-pointer"
+                  >
+                    <span>Visit Live Website</span>
+                    <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                  </a>
+
+                  <button
+                    onClick={() => onShowToast("Redition Pharma features 8+ WHO-GMP certified formulations with pan-India hospital supply")}
+                    className="text-xs font-medium text-zinc-600 hover:text-zinc-950 transition flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <span>Explore Formulations Monograph</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Column: Screenshot in Browser Mockup */}
+              <div className="lg:col-span-6 flex flex-col gap-3">
+                <a
+                  href="https://www.reditionpharma.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block relative rounded-2xl overflow-hidden bg-white border border-zinc-300/80 shadow-elevated group/preview transition-transform hover:-translate-y-1"
+                >
+                  {/* Browser Chrome Header */}
+                  <div className="bg-zinc-100/95 border-b border-zinc-200 px-4 py-2.5 flex items-center justify-between text-xs text-zinc-500">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-red-400/80 inline-block" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80 inline-block" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80 inline-block" />
+                    </div>
+
+                    <div className="bg-white px-4 py-1 rounded-md border border-zinc-200 text-[11px] font-mono text-zinc-600 flex items-center gap-1.5 shadow-xs max-w-xs truncate">
+                      <ShieldCheck className="w-3 h-3 text-teal-600 shrink-0" />
+                      <span>reditionpharma.com</span>
+                    </div>
+
+                    <div className="w-6" />
+                  </div>
+
+                  {/* Screenshot Image */}
+                  <div className="aspect-[16/10] overflow-hidden bg-zinc-50 relative">
+                    <img
+                      src="/redition-pharma.jpg"
+                      alt="Redition Pharma Ltd. Formulations Facility & Platform"
+                      className="w-full h-full object-cover object-center transition duration-700 group-hover/preview:scale-103"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover/preview:bg-black/10 transition-colors flex items-center justify-center">
+                      <div className="opacity-0 group-hover/preview:opacity-100 transition-opacity px-4 py-2 rounded-full bg-zinc-950/90 text-white text-xs font-medium backdrop-blur-sm flex items-center gap-2 shadow-lg">
+                        <span>Open Live Site</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                {/* Formulations list chip footer */}
+                <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px] font-mono text-zinc-600">
+                  <span className="text-zinc-400 text-[10px] uppercase tracking-wider">Formulations:</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-white border border-zinc-200 shadow-2xs font-medium">ADNOSINE-108</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-white border border-zinc-200 shadow-2xs font-medium">MACSINE-109</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-white border border-zinc-200 shadow-2xs font-medium">QLONG-GOLD</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-white border border-zinc-200 shadow-2xs font-medium">PREDY-NT</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-white border border-zinc-200 shadow-2xs font-medium">ADNOCAR-DS</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        )}
+
         {/* PRIMARY RECENT PROJECT: NSB Pharmaceutical (Live Website) */}
         {(filter === 'all' || filter === 'pharma') && (
           <div className="bg-white rounded-[2.5rem] border border-emerald-600/20 p-6 sm:p-9 lg:p-12 shadow-md hover:shadow-xl transition-all mb-10 group relative overflow-hidden">
